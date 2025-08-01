@@ -77,7 +77,16 @@ function drawWheel() {
       ctx.save();
       ctx.translate(textX, textY);
       ctx.rotate(midAngle);
-      ctx.drawImage(entry.image, -20, -20, 40, 40);
+
+      const maxRadius = radius * 0.35;
+      const maxAngle = arc;
+      const maxWidth = 2 * Math.sin(maxAngle / 2) * maxRadius;
+      const scale = Math.min(maxWidth / entry.image.width, maxWidth / entry.image.height);
+
+      const imgW = entry.image.width * scale;
+      const imgH = entry.image.height * scale;
+
+      ctx.drawImage(entry.image, -imgW / 2, -imgH / 2, imgW, imgH);
       ctx.restore();
     } else if (entry.label) {
       ctx.fillStyle = "white";
