@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+#controls {
+  padding: 10px;
+  background: #111;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#entryList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 8px;
+  background-color: #222;
+}
+
+.entryItem {
+  background: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.entryItem:hover {
+  background: #555;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  background: black;
+}
+
+#arrow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: white;
+  z-index: 10;
+}
+
+.fullscreen #controls ,
+.fullscreen #entryList {
+  display: none;
+}
+
+.fullscreen canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fullscreen #arrow {
+  display: block;
+}
+
+.WheelText {
+    stroke: #111;
+    stroke-width: 2px;
+}
+
+#main {
+  padding: 10px;
+  background: #111;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  background: #202020;
+  color: white;
+  border-radius: 1px;
+  transition: background-color,transform 0.2s ease-in-out;
+}
+
+.buttons:hover {
+  background: #353535;
+  transform: scale(1.1);
+}

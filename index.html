@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roue aléatoire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="controls">
+    <input type="text" id="labelInput" placeholder="Texte" />
+    <input type="file" id="imageInput" accept="image/*" >
+    <button onclick="addEntry()" class="buttons">Ajouter</button>
+  </div>
+  <div id="main">
+    <button onclick="toggleFullscreen()" class="buttons">Plein écran</button>
+    <button onclick="spinWheel()" class="buttons">Tourner</button>
+  </div>
+
+  <div id="entryList"></div>
+
+  <div id="arrow">&#x25BC;</div>
+  <canvas id="wheelCanvas" width="600" height="600"></canvas>
+
+  <script src="main.js"></script>
+</body>
+</html>
