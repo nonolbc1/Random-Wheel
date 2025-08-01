@@ -70,8 +70,8 @@ function drawWheel() {
     ctx.fill();
 
     const midAngle = startAngle + arc / 2;
-    const textX = centerX + Math.cos(midAngle) * (radius / 1.5);
-    const textY = centerY + Math.sin(midAngle) * (radius / 1.5);
+    const textX = centerX + Math.cos(midAngle) * (radius / 2);
+    const textY = centerY + Math.sin(midAngle) * (radius / 2);
 
     if (entry.image) {
       ctx.save();
@@ -82,8 +82,16 @@ function drawWheel() {
     } else if (entry.label) {
       ctx.fillStyle = "white";
       ctx.strokeStyle = "#000000";
-      ctx.lineWidth = 3;
-      ctx.font = "24px sans-serif";
+      ctx.lineWidth = 2;
+
+      let fontSize = 18;
+      ctx.font = `bold ${fontSize}px sans-serif`;
+
+      while (ctx.measureText(entry.label).width > 250 && fontSize > 10) {
+        fontSize--;
+        ctx.font = `bold ${fontSize}px sans-serif`;
+      }
+
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.save();

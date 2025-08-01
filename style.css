@@ -13,6 +13,8 @@ body {
   gap: 10px;
   align-items: center;
   flex-wrap: wrap;
+  height: 40px;
+  overflow: hidden;
 }
 
 #entryList {
@@ -42,7 +44,7 @@ canvas {
 
 #arrow {
   position: absolute;
-  top: 0;
+  top: 14%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
@@ -80,14 +82,20 @@ canvas {
   flex-wrap: wrap;
 }
 
+#copyright {
+  color: #555;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
 .buttons {
-  background: #202020;
+  background-color: #202020;
   color: white;
-  border-radius: 1px;
+  border-radius: 3px;
   transition: background-color,transform 0.2s ease-in-out;
 }
 
 .buttons:hover {
-  background: #353535;
+  background-color: #353535;
   transform: scale(1.1);
 }
